@@ -1,7 +1,5 @@
 # Simple Graphic Cards Application
 
-
-
 This is a technical challenge developed with NodeJS and Angular.
 
 It is divided into two pieces: server and client.
@@ -13,6 +11,7 @@ This is an application developed only with NodeJS using the 'http' module to cre
 - NodeJS **'http'** module: https://nodejs.org/api/http.html
 <br>
 <br>
+More detailed information can be found [here: /server/README.md](/server/README.md)
 ## Client
 This is an application developed under Angular framework.
 
