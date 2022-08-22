@@ -1,0 +1,14 @@
+:host {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 5px;
+}
+
+.nocards__text {
+  width: 100%;
+  color: var(--color-white, white);
+}
+
+.cards__container {
+  display: block;
+}

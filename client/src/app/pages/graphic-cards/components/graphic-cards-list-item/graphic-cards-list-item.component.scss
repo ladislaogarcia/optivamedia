@@ -1,0 +1,147 @@
+$columnXSMaxSize: 300px;
+$rowMaxSize: 450px;
+$minWidth: 200px;
+
+@mixin createPadding($padding) {
+  padding: $padding;
+  box-sizing: border-box;
+}
+
+@mixin card_column {
+  flex-direction: column;
+  min-height: 20vh;
+}
+
+@mixin card_row {
+  flex-direction: row;
+  min-height: 0;
+}
+
+:host {
+  width: 100%;
+  background: linear-gradient(
+    -45deg,
+    var(--color-grey-light, rgba(200, 200, 200, 0.7)) 0%,
+    var(--color-white, white) 60%
+  );
+  box-shadow: 0 4px 12px 3px rgba(0, 0, 0, 0.2) inset;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  position: relative;
+  width: 100%;
+  min-width: $minWidth;
+
+  @media (min-width: $rowMaxSize) {
+    flex: 0;
+  }
+}
+
+.card {
+  @include createPadding(0 10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--color-primary, black);
+  cursor: pointer;
+  @include card_column;
+
+  @media (min-width: $columnXSMaxSize) {
+    @include card_row;
+  }
+
+  @media (min-width: $rowMaxSize) {
+    @include card_column;
+  }
+
+  .card__image__container {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px 0px;
+    min-width: 100px;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white, white);
+    margin-top: 10px;
+
+    @media (max-width: $columnXSMaxSize) {
+      width: 100%;
+    }
+
+    @media (min-width: $rowMaxSize) {
+      width: 100%;
+    }
+
+    .card__image {
+      max-width: 100%;
+    }
+  }
+
+  .card__content {
+    @include createPadding(4px 0);
+    display: flex;
+    flex-flow: column wrap;
+    width: 60%;
+    justify-content: space-evenly;
+    text-align: right;
+    width: 100%;
+
+    .card__name,
+    .card__manufacturer,
+    .card__price {
+      margin: 4px 0;
+    }
+  }
+}
+
+.card__name,
+.card__price {
+  font-size: clamp(1.2rem, 7vw, 20px);
+}
+
+.card__manufacturer {
+  font-size: minmax(12px, 1rem);
+}
+
+.card__name {
+  color: var(--color-primary, black);
+  text-shadow: -1px 1px 1px var(--color-white, white);
+}
+
+.card__price {
+  @include createPadding(4px);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, var(--color-primary, black) 100%);
+  color: var(--color-white, white);
+  text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px 0px;
+}
+
+.card__valoration {
+  align-items: center;
+  background-color: var(--color-primary, orange);
+  border-radius: 0 0 100% 0;
+  color: var(--color-white, white);
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(1.5rem, 4.5vw, 2rem);
+  line-height: 0.55;
+  margin: 0;
+  opacity: 0.6;
+  @include createPadding(1rem 1.3rem 1.3rem 1rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(10vw, 4.5rem);
+  height: min(10vh, 4rem);
+  text-indent: -0.75rem;
+
+  @media (max-width: $columnXSMaxSize) {
+    text-indent: -0.25rem;
+  }
+
+  @media (min-width: $rowMaxSize) {
+    text-indent: -0.75rem;
+  }
+}

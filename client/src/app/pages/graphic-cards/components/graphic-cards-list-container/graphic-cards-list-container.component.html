@@ -1,0 +1,5 @@
+<app-graphic-cards-list-item
+  *ngFor="let card of cards"
+  [card]="card"
+  (clicked)="showClicked(card.id)"
+></app-graphic-cards-list-item>

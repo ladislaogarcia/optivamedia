@@ -1,0 +1,40 @@
+<div class="cardDetail" *ngIf="card$ | async as card">
+  <section class="cardDetail__valoration">
+    {{ card.id }}
+  </section>
+  <section class="cardDetail__carousel">
+    <div class="cardDetail__carousel__thumbnailList">
+      <a
+        class="cardDetail__carousel__thumbnail"
+        *ngFor="let thumb of card.original_pictures"
+        (click)="setActiveImage($event, thumb)"
+        ><img loading="lazy" [src]="thumb" [alt]="card.name"
+      /></a>
+    </div>
+    <section class="cardDetail__carousel__image">
+      <img loading="lazy" #bigpicture [src]="card.original_pictures[0]" [alt]="card.name" />
+    </section>
+  </section>
+  <section class="cardDetail__content">
+    <section class="cardDetail__header">
+      <h1 class="cardDetail__name">{{ card.name }}</h1>
+      <h2 class="cardDetail__manufacturer">{{ card.manufacturer }}</h2>
+    </section>
+    <section class="cardDetail__price">
+      <p class="cardDetail__price__old" *ngIf="card.price.original > card.price.current">
+        BEFORE: {{ card.price.original | currency: 'EUR':'symbol':'1.2-2' }}
+      </p>
+      <p class="cardDetail__price__current">
+        <strong>{{ card.price.current | currency: 'EUR':'symbol':'1.2-2' }}</strong>
+      </p>
+      <p class="cardDetail__price__discount" *ngIf="card.price.original > card.price.current">
+        {{ (100 - (card.price.current * 100) / card.price.original).toFixed(0) }}% OFF
+      </p>
+    </section>
+    <section class="description">
+      <p>{{ card.description }}</p>
+    </section>
+  </section>
+
+  <button class="cardDetail__backButton" [routerLink]="['/']">Back</button>
+</div>

@@ -1,0 +1,27 @@
+{
+  "port": 8081,
+  "methodsAllowed": ["OPTIONS", "GET"],
+  "jsonPath": "",
+  "responseCodes": {
+    "200": {
+      "error": false,
+      "statusCode": 200,
+      "message": "OK"
+    },
+    "404": {
+      "error": true,
+      "statusCode": 404,
+      "message": "Not found"
+    },
+    "405": {
+      "error": true,
+      "statusCode": 405,
+      "message": "Method Not-Allowed"
+    },
+    "503": {
+      "error": true,
+      "statusCode": 503,
+      "message": "Service unavailable"
+    }
+  }
+}

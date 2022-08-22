@@ -1,0 +1,18 @@
+// COLORS
+$color-primary: blueviolet;
+$color-secondary: darkmagenta;
+$color-accent: cornflowerblue;
+$color-white: white;
+$color-dark-grey: rgb(100, 100, 100);
+
+$colors: (
+  color-primary: $color-primary,
+  color-secondary: $color-secondary,
+  color-accent: $color-accent,
+  color-white: $color-white,
+  comboSelect-color: $color-dark-grey,
+  comboSelect-selected-color: $color-white,
+  comboSelect-selected-background: $color-primary,
+  spinner-color: $color-primary,
+  page404-color: $color-white
+);
