@@ -48,8 +48,9 @@ This options can be supplied by a file called 'server.config.json' placed into t
 <br>
 <br>
 
+
 | option         | type     | required | default            |
-| -------------- | -------- | -------- | ------------------ | ------------------------------------------------------------- |
+| -------------- | -------- | -------- | ------------------ | 
 | port           | number   | No       | 8081               | Port used by the server                                       |
 | methodsAllowed | string[] | No       | ["OPTIONS", "GET"] | Methods allowed by server\*                                   |
 | jsonPath       | string   | Yes      | ""                 | Path where the server will find the json files                |
@@ -62,8 +63,8 @@ This options can be supplied by a file called 'server.config.json' placed into t
 ---
 
 #### **Default responseCodes**
-
 ---
+<br/>
 
 ```json
 {

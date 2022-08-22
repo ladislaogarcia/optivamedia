@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run server:start && npm run client:start",
+    "prepare": "cd server && npm i && cd.. && cd client && npm i",
     "server:build": "cd server && npm run build",    
     "server:start": "cd ./server && npm start",
     "server:check": "npm run lint && npm run format",
