@@ -41,8 +41,7 @@ This is an application developed under Angular framework: https://angular.io
 2. Type this in a terminal. It will install all the dependencies: **npm run prepare**
 
 ### **BUILD**
-3. Now we can build the server: **npm run server:build**
-4. And the client: npm run client:build.
+3. Now we can build the server and the client: **npm run build**
 
 ### **RUN THE SERVER AND THE CLIENT**
 5. First, we have to turn on the server: **npm run server:start** 

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepare": "cd server && npm i && cd.. && cd client && npm i",
+    "build": "npm run server:build && npm run client:build",
     "server:build": "cd server && npm run build",    
     "server:start": "cd ./server && npm start",
     "server:check": "npm run lint && npm run format",
