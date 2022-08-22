@@ -1,0 +1,191 @@
+[
+  {
+    "id": 1,
+    "name": "ASUS ROG Strix GeForce RTX 3090",
+    "description": "Las GPU GeForce RTX™ serie 30 ofrecen el máximo rendimiento para jugadores y creadores. Con tecnología de Ampere, la arquitectura RTX de la segunda generación de NVIDIA, con nuevos núcleos RT y Tensor y multiprocesadores de streaming para los gráficos de trazado de rayos más realistas y las funciones de inteligencia artificial más innovadoras.",
+    "currency": "EUR",
+    "original_image_url": "https://res-1.cloudinary.com/grover/image/upload/v1642009027/gb6lr0bkui9xlcpty0fi.png",
+    "original_pictures": [
+      "https://res-1.cloudinary.com/grover/image/upload/v1642009027/gb6lr0bkui9xlcpty0fi.png",
+      "https://res-5.cloudinary.com/grover/image/upload/v1642009040/egkjslsfyegk2vmwli5x.png",
+      "https://res-1.cloudinary.com/grover/image/upload/v1642009054/j27xco5binmdno9bbp4l.png",
+      "https://res-1.cloudinary.com/grover/image/upload/v1642009067/wvdlqbr4ziklmr0wmlvl.png"
+    ],
+    "manufacturer": "Nvidia",
+    "assembler": "Asus",
+    "specifications": {
+      "memory": {
+        "size": "24GB",
+        "type": "GDDR6X"
+      },
+      "boostClockSpeed": "1725 MHz",
+      "dimensions": "5.78 x 31.85 x 14.01 cm",
+      "weight": "1 kg"
+    },
+    "accessories": [],
+    "price": {
+      "current": 2795.16,
+      "original": 2795.16
+    },
+    "valoration": {
+      "avg": 9.75
+    }
+  },
+  {
+    "id": 2,
+    "name": "MSI AMD Radeon RX 6900 XT GAMING X TRIO 16GB GDDR6",
+    "description": "Presentamos las tarjetas gráficas AMD Radeon ™ RX 6000 Series, con la revolucionaria arquitectura AMD RDNA ™ 2, diseñada para brindar un rendimiento ultra alto, una resolución ultra alta y juegos visualmente impresionantes para todos. Estamos impulsando la próxima generación de juegos.",
+    "currency": "EUR",
+    "original_image_url": "https://res-1.cloudinary.com/grover/image/upload/v1642009027/gb6lr0bkui9xlcpty0fi.png",
+    "original_pictures": [
+      "https://res-1.cloudinary.com/grover/image/upload/v1642009027/gb6lr0bkui9xlcpty0fi.png",
+      "https://res-5.cloudinary.com/grover/image/upload/v1642009040/egkjslsfyegk2vmwli5x.png",
+      "https://res-1.cloudinary.com/grover/image/upload/v1642009054/j27xco5binmdno9bbp4l.png",
+      "https://res-1.cloudinary.com/grover/image/upload/v1642009067/wvdlqbr4ziklmr0wmlvl.png"
+    ],
+    "manufacturer": "AMD",
+    "assembler": "MSI",
+    "specifications": {
+      "memory": {
+        "size": "16GB",
+        "type": "GDDR6"
+      },
+      "boostClockSpeed": "2340 MHz",
+      "dimensions": "5.5 x 32.4 x 14.1 cm",
+      "weight": "1.58 kg"
+    },
+    "accessories": [],
+    "price": {
+      "current": 1770.65,
+      "original": 2036.24
+    },
+    "valoration": {
+      "avg": 9.17
+    }
+  },
+  {
+    "id": 3,
+    "name": "Zotac Gaming GeForce RTX 3080 Ti Trinity OC LHR 12GB GDDR6X",
+    "description": "Obtenga amplificación con la serie ZOTAC GAMING GeForce RTXTM 30 basada en la arquitectura NVIDIA Ampere. Construida con RT Cores y Tensor Cores mejorados, nuevos multiprocesadores de transmisión y memoria GDDR6X ultrarrápida, ZOTAC GAMING GeForce RTX 3080 Trinity OC LHR 12GB da lugar a juegos amplificados con una fidelidad gráfica ultra elegante.",
+    "currency": "EUR",
+    "original_image_url": "https://res-3.cloudinary.com/grover/image/upload/v1619436248/wferlro4uneta3mhq0xb.png",
+    "original_pictures": [
+      "https://res-3.cloudinary.com/grover/image/upload/v1619436248/wferlro4uneta3mhq0xb.png",
+      "https://res-2.cloudinary.com/grover/image/upload/v1619428518/p1uehbwluqmf5u0xpvgt.png",
+      "https://res-2.cloudinary.com/grover/image/upload/v1619428527/lhlu3ngpcxjzgcxjk6wo.png"
+    ],
+    "manufacturer": "Nvidia",
+    "assembler": "Zotac",
+    "specifications": {
+      "memory": {
+        "size": "24GB",
+        "type": "GDDR6"
+      },
+      "boostClockSpeed": "1710 MHz",
+      "dimensions": "31.78 x 12.07 x 5.8 cm",
+      "weight": "1 kg"
+    },
+    "accessories": [],
+    "price": {
+      "current": 899.89,
+      "original": 899.89
+    },
+    "valoration": {
+      "avg": 10
+    }
+  },
+  {
+    "id": 4,
+    "name": "Gigabyte Gaming OC Radeon RX 6900 XT",
+    "description": "Presentamos las tarjetas gráficas AMD Radeon ™ RX 6000 Series, con la revolucionaria arquitectura AMD RDNA ™ 2, diseñada para brindar un rendimiento ultra alto, una resolución ultra alta y juegos visualmente impresionantes para todos. Estamos impulsando la próxima generación de juegos.",
+    "currency": "EUR",
+    "original_image_url": "https://res-2.cloudinary.com/grover/image/upload/v1644880220/gsiztecqvqlwbge7aqvf.webp",
+    "original_pictures": [
+      "https://res-2.cloudinary.com/grover/image/upload/v1644880220/gsiztecqvqlwbge7aqvf.webp",
+      "https://res-3.cloudinary.com/grover/image/upload/v1644880262/da73fmw5rw3qizqvjdbd.webp",
+      "https://res-4.cloudinary.com/grover/image/upload/v1644880292/bnuwnupd7atwasaa6rhq.webp",
+      "https://res-3.cloudinary.com/grover/image/upload/v1644880272/votksn83mhhfwft4lkd0.webp"
+    ],
+    "manufacturer": "Gigabyte",
+    "assembler": "AMD",
+    "specifications": {
+      "memory": {
+        "size": "16GB",
+        "type": "GDDR6"
+      },
+      "boostClockSpeed": "2285 MHz",
+      "dimensions": "5.8 x 28.6 x 11.8 cm",
+      "weight": "1.5 kg"
+    },
+    "accessories": [],
+    "price": {
+      "current": 2823.95,
+      "original": 2823.95
+    },
+    "valoration": {
+      "avg": 8.07
+    }
+  },
+  {
+    "id": 5,
+    "name": "Asus TUF Gaming TUF-RX6900XT-O16G-GAMING",
+    "description": "Presentamos las tarjetas gráficas AMD Radeon ™ RX 6000 Series, con la revolucionaria arquitectura AMD RDNA ™ 2, diseñada para brindar un rendimiento ultra alto, una resolución ultra alta y juegos visualmente impresionantes para todos. Estamos impulsando la próxima generación de juegos.",
+    "currency": "EUR",
+    "original_image_url": "https://res-4.cloudinary.com/grover/image/upload/v1615805827/odnmoelevpgjs2prqj0f.png",
+    "original_pictures": [
+      "https://res-4.cloudinary.com/grover/image/upload/v1615805827/odnmoelevpgjs2prqj0f.png",
+      "https://res-5.cloudinary.com/grover/image/upload/v1615806630/osutvd3unas3sielkh06.png",
+      "https://res-2.cloudinary.com/grover/image/upload/v1615806641/u1xhylepbi4b17iqqget.png"
+    ],
+    "manufacturer": "Gigabyte",
+    "assembler": "Asus",
+    "specifications": {
+      "memory": {
+        "size": "16GB",
+        "type": "GDDR6"
+      },
+      "boostClockSpeed": "2105 MHz",
+      "dimensions": "14.02 x 32 x 5.78 cm",
+      "weight": "1 kg"
+    },
+    "accessories": [],
+    "price": {
+      "current": 1441.29,
+      "original": 1441.29
+    },
+    "valoration": {
+      "avg": 8.6
+    }
+  },
+  {
+    "id": 6,
+    "name": "ASUS GeForce RTX 3070 Ti TUF O8G LHR",
+    "description": "RTX.IT IS ON. Disfruta de los mayores éxitos de ventas de hoy como nunca antes con la fidelidad visual del trazado de rayos en tiempo real y el rendimiento definitivo de DLSS con tecnología de IA.",
+    "currency": "EUR",
+    "original_image_url": "https://res-4.cloudinary.com/grover/image/upload/v1615805827/odnmoelevpgjs2prqj0f.png",
+    "original_pictures": [
+      "https://res-4.cloudinary.com/grover/image/upload/v1615805827/odnmoelevpgjs2prqj0f.png",
+      "https://res-5.cloudinary.com/grover/image/upload/v1615806630/osutvd3unas3sielkh06.png",
+      "https://res-2.cloudinary.com/grover/image/upload/v1615806641/u1xhylepbi4b17iqqget.png"
+    ],
+    "manufacturer": "Nvidia",
+    "assembler": "Asus",
+    "specifications": {
+      "memory": {
+        "size": "8GB",
+        "type": "GDDR6"
+      },
+      "boostClockSpeed": "1815 MHz",
+      "dimensions": "30 x 12.7 x 5.2 cm",
+      "weight": "1 kg"
+    },
+    "accessories": [],
+    "price": {
+      "current": 834.53,
+      "original": 834.53
+    },
+    "valoration": {
+      "avg": 9.9
+    }
+  }
+]
