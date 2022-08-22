@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd ./client && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:client": "cd ./client && npm run lint",
-    "lint:client:fix": "cd ./client && npm run lint:fix",
-    "format:client": "cd ./client && npm run format",
-    "format:client:fix": "cd ./client && npm run format:fix",
-    "check:client": "cd ./client && npm run check",
-    "check:client:fix": "cd ./client && npm run check:fix"
+    "start": "cd ./client && npm start",    
+    "client:lint": "cd ./client && npm run lint",
+    "client:lint:fix": "cd ./client && npm run lint:fix",
+    "client.format": "cd ./client && npm run format",
+    "client.format:fix": "cd ./client && npm run format:fix",
+    "client:check": "cd ./client && npm run check",
+    "client:check:fix": "cd ./client && npm run check:fix",
+    "client:test": "cd ./client && ng test",
+    "test": "npm run client:test"
   },
   "keywords": [],
   "author": "",

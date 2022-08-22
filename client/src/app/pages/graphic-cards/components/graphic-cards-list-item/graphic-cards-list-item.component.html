@@ -1,0 +1,15 @@
+<div class="card" *ngIf="card" (click)="onClick(card)">
+  <div class="card__image__container">
+    <img class="card__image" [src]="card.original_image_url" />
+  </div>
+  <p class="card__valoration">
+    {{ card.id }}
+  </p>
+  <div class="card__content">
+    <strong
+      ><h3 class="card__name">{{ card.name }}</h3></strong
+    >
+    <p class="card__manufacturer">{{ card.manufacturer | uppercase }}</p>
+    <p class="card__price">{{ card.price.current | currency: 'EUR':'symbol':'1.2-2' }}</p>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+%option {
+  display: flex;
+  background-color: var(--color-white, white);
+  padding: 15px;
+  border-bottom: 1px solid #c2c2c2;
+}
+
+:host {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.comboSelect {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+
+  .comboSelect__selected {
+    @extend %option;
+    color: var(--comboSelect-color, grey);
+
+    &:not(.disabled) {
+      cursor: pointer;
+    }
+
+    &.disabled {
+      color: grey;
+    }
+
+    .comboSelect__selected__text {
+      margin: 0;
+    }
+  }
+
+  .comboSelect__options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    position: absolute;
+    top: 3rem;
+
+    .comboSelect__options__item {
+      @extend %option;
+      cursor: pointer;
+      color: var(--comboSelect-color, grey);
+
+      &.selected {
+        color: var(--comboSelect-selected-color, lightgrey);
+        background-color: var(--comboSelect-selected-background, grey);
+        border: 1px solid var(--comboSelect-selected-color, lightgrey);
+        box-shadow: -2vw -3vh 2rem 1rem rgba(0, 0, 0, -6) inset;
+      }
+
+      .comboSelect__options__item__text {
+        margin: 0;
+      }
+    }
+  }
+}

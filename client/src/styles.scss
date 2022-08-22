@@ -1,2 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'globals';
+
+/* You can add global styles to this file, and also import other style files */
+
+// COLORS
+:root {
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+}
+
+html,
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-primary, white);
+}
+
+h1 {
+  color: var(--color-white, white);
+  font-size: clamp(25px, 5rem, 40px);
+  margin: 6px 0;
+}
+
+label {
+  display: inline-block;
+  color: var(--color-white, white);
+  padding: 16px 0;
+}
+
+button {
+  padding: 8px 16px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in;
+  border: 1px solid var(--color-white, black);
+  background-color: var(--color-primary, white);
+  color: var(--color-white, black);
+
+  &:hover {
+    border: 1px solid var(--color-primary, white);
+    background-color: var(--color-white, black);
+    color: var(--color-primary, white);
+    box-shadow: -2px 3px 5px 2px rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,33 @@
+<div class="graphic__cards">
+  <h1>Graphic Cards</h1>
+  <div class="graphic__cards__filters" [formGroup]="form">
+    <div class="graphic__cards__filters__item">
+      <label for="selectManufacturers">Manufacturers</label>
+      <app-dropdown-select
+        id="selectManufacturers"
+        formControlName="manufacturersCombo"
+        [options]="manufacturers"
+        [placeholder]="'All'"
+      ></app-dropdown-select>
+    </div>
+    <div class="graphic__cards__filters__item">
+      <label for="selectModels">Model</label>
+      <app-dropdown-select
+        id="selectModels"
+        formControlName="modelsCombo"
+        [options]="models"
+        [placeholder]="'All'"
+      ></app-dropdown-select>
+    </div>
+  </div>
+  <div appInfiniteScroll (scrolled)="loadMoreData()">
+    <app-graphic-cards-list-container
+      [cards]="
+        cards$
+          | async
+          | filterArrayByPropertyValue: 'manufacturer':form.value.manufacturersCombo
+          | filterArrayByPropertyValue: 'name':form.value.modelsCombo
+      "
+    ></app-graphic-cards-list-container>
+  </div>
+</div>
