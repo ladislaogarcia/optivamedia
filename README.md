@@ -22,7 +22,7 @@ This is an application developed only with NodeJS using the 'http' module to cre
 - NodeJS **'http'** module: https://nodejs.org/api/http.html
 <br>
 <br>
-More detailed information can be found [here: /server/README.md](/server/README.md)
+More detailed information can be found here: [Server Docs](/server/README.md)
 
 ## Client
 
