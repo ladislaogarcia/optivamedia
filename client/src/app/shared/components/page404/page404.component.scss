@@ -1,0 +1,19 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.page404__title {
+  font-size: 10rem;
+  color: var(--page404-color, white);
+  margin: 0 auto;
+  line-height: 0.9;
+}
+
+.page404__subtitle {
+  color: var(--page404-color, white);
+  margin: 0 auto 1rem;
+}

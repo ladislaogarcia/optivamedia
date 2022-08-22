@@ -1,0 +1,19 @@
+<div class="comboSelect" (click)="this.isOpen = !this.isOpen">
+  <div class="comboSelect__selected" [class.placeholder]="!value">
+    <p class="comboSelect__selected__text">{{ value || placeholder }}</p>
+    <div class="arrow" [class.opened]="isOpen"></div>
+  </div>
+  <div class="comboSelect__options" *ngIf="isOpen">
+    <div class="comboSelect__options__item" *ngIf="value" (click)="setSelected(null)">
+      {{ placeholder }}
+    </div>
+    <div
+      class="comboSelect__options__item"
+      *ngFor="let option of options"
+      [class.selected]="option === value"
+      (click)="setSelected(option)"
+    >
+      <p class="comboSelect__options__item__text">{{ option }}</p>
+    </div>
+  </div>
+</div>
