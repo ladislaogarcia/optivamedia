@@ -60,3 +60,20 @@ Client application, as always with Angular SSR, is in: **http://localhost:4000/*
 Now, we have working an small API created only with NodeJS native and an Angular application rendered with Universal (SSR).
 
 Any question or doubt, do not hesitate to reach me.
+
+### **HOW TO TEST**
+
+We have to more npm scripts to know:
+<br/><br/>
+**npm run server:test**: Run the server unit test
+<br>
+**npm run client:test**: Run the client unit test
+<br>
+
+There is few more ones in 'package.json' file.
+
+For **linting** (ESLint) or **code formatting** (Prettier), by an instance.
+All the scripts ending in ':fix' means that script will make some job if you run it. Lint scripts with ':fix' fixes automatically the errors.
+
+Or the code formating. If you run the ones whose ending in ':fix' it will also format the code, not just checking it.
+
