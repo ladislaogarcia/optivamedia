@@ -22,10 +22,10 @@ export class AppInfiniteScrollDirective implements OnInit {
   @Output() scrolled: EventEmitter<any> = new EventEmitter();
 
   // Rxjs 'fromEvent' did not working always
-  @HostListener('scroll', ['$event.target'])
-  onScroll(elem: EventTarget): void {
-    this.checkScrollBottom(elem);
-  }
+  // @HostListener('scroll', ['$event.target'])
+  // onScroll(elem: EventTarget): void {
+  //   this.checkScrollBottom(elem);
+  // }
 
   private styleRules: StyleRules[] = [
     {
@@ -53,14 +53,14 @@ export class AppInfiniteScrollDirective implements OnInit {
 
     // Rxjs 'fromEvent' did not working always
 
-    // fromEvent(this.el.nativeElement, 'scroll').subscribe((elem: any): void => {
-    //   this.checkScrollBottom(elem);
-    // });
+    fromEvent(this.el.nativeElement, 'scroll').subscribe((elem: any): void => {
+      this.checkScrollBottom(elem.target);
+    });
   }
 
   private checkScrollBottom(elem: EventTarget): boolean {
     const { offsetHeight, scrollTop, scrollHeight }: any = elem;
-    const isScrolledBottom = offsetHeight + scrollTop >= scrollHeight;
+    const isScrolledBottom = offsetHeight + scrollTop >= scrollHeight - 20;
     isScrolledBottom && this.scrolled.emit();
     return isScrolledBottom;
   }
