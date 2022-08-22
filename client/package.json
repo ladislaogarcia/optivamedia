@@ -12,7 +12,11 @@
     "format": "prettier ./src/** --list-different",
     "format:fix": "prettier ./src/** --write --list-different",
     "check": "npm run lint && npm run format",
-    "check:fix": "npm run lint:fix && npm run format:fix"
+    "check:fix": "npm run lint:fix && npm run format:fix",
+    "dev:ssr": "ng run client:serve-ssr",
+    "serve:ssr": "node dist/client/server/main.js",
+    "build:ssr": "ng build && ng run client:server",
+    "prerender": "ng run client:prerender"
   },
   "private": true,
   "dependencies": {
@@ -23,10 +27,13 @@
     "@angular/forms": "^14.1.0",
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/platform-server": "^14.1.0",
     "@angular/router": "^14.1.0",
     "@ngrx/effects": "^14.2.0",
     "@ngrx/store": "^14.2.0",
     "@ngrx/store-devtools": "^14.2.0",
+    "@nguniversal/express-engine": "^14.1.0",
+    "express": "^4.15.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -41,7 +48,10 @@
     "@angular/cli": "~14.1.2",
     "@angular/compiler-cli": "^14.1.0",
     "@ngrx/eslint-plugin": "^14.2.0",
+    "@nguniversal/builders": "^14.1.0",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~4.0.0",
+    "@types/node": "^14.15.0",
     "@types/webpack-env": "^1.18.0",
     "@typescript-eslint/eslint-plugin": "5.29.0",
     "@typescript-eslint/parser": "5.29.0",

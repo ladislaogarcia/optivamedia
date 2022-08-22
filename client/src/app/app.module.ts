@@ -13,7 +13,7 @@ import { GraphicCardsEffects } from '@store/effects/graphic-cards.effects';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CoreModule,
     SharedModule,
