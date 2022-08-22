@@ -1,4 +1,12 @@
-import { Directive, ElementRef, OnInit, Output, Renderer2, EventEmitter } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  OnInit,
+  Output,
+  Renderer2,
+  EventEmitter,
+  HostListener
+} from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { ApplicationRef } from '@angular/core';
 
@@ -12,6 +20,13 @@ interface StyleRules {
 })
 export class AppInfiniteScrollDirective implements OnInit {
   @Output() scrolled: EventEmitter<any> = new EventEmitter();
+
+  // Rxjs 'fromEvent' did not working always
+  @HostListener('scroll', ['$event.target'])
+  onScroll(elem: EventTarget): void {
+    this.checkScrollBottom(elem);
+  }
+
   private styleRules: StyleRules[] = [
     {
       name: 'display',
@@ -35,16 +50,19 @@ export class AppInfiniteScrollDirective implements OnInit {
 
   ngOnInit(): void {
     this.applyStyles();
-    fromEvent(this.el.nativeElement, 'scroll').subscribe((data: any): void => {
-      const { scrollTop }: any = (data as Event).target;
-      const scrollDownMax: number = this.getScrollDownMax(data);
-      scrollTop === scrollDownMax && this.scrolled.emit();
-    });
+
+    // Rxjs 'fromEvent' did not working always
+
+    // fromEvent(this.el.nativeElement, 'scroll').subscribe((elem: any): void => {
+    //   this.checkScrollBottom(elem);
+    // });
   }
 
-  private getScrollDownMax(elem: Event): number {
-    const { scrollTop, offsetHeight, scrollTopMax }: any = (elem as Event).target;
-    return scrollTopMax || scrollTop + offsetHeight;
+  private checkScrollBottom(elem: EventTarget): boolean {
+    const { offsetHeight, scrollTop, scrollHeight }: any = elem;
+    const isScrolledBottom = offsetHeight + scrollTop >= scrollHeight;
+    isScrolledBottom && this.scrolled.emit();
+    return isScrolledBottom;
   }
 
   private applyStyles() {

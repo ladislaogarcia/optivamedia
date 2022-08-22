@@ -1,36 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { IGraphicCardItem } from '@core/models/igraphic-card-item.model';
-import { GraphicCardsService } from '@core/services/graphic-cards.service';
-import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { GraphicCardsActions } from '@store/actions/graphic-cards.actions';
+import { selectCards } from '@store/selectors/graphic-cards.selectors';
+import { Subscription } from 'rxjs';
+Store;
 
 @Component({
   selector: 'app-graphic-cards',
   templateUrl: './graphic-cards.component.html',
-  styleUrls: ['./graphic-cards.component.scss']
+  styleUrls: ['./graphic-cards.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GraphicCardsComponent implements OnInit {
-  cards$: Observable<IGraphicCardItem[]>;
   manufacturers: string[];
   models: string[];
   cards: IGraphicCardItem[];
 
   form: FormGroup;
 
-  constructor(private service: GraphicCardsService) {
+  cardsSubscription!: Subscription | undefined;
+  manufacturersSuscription!: Subscription | undefined;
+  modelsSubscription!: Subscription | undefined;
+
+  constructor(private store: Store) {
     this.form = new FormGroup({
       manufacturersCombo: new FormControl(''),
       modelsCombo: new FormControl('')
     });
-    this.cards$ = this.service.graphicCards$;
     this.cards = [];
     this.manufacturers = [];
     this.models = [];
-    this.cards$.subscribe((cards) => {
-      this.cards = cards;
-      this.manufacturers = [...new Set(cards.map((card) => card.manufacturer))];
-      this.models = [...new Set(cards.map((card) => card.name))];
+    this.cardsSubscription = this.store.select(selectCards).subscribe((cards) => {
+      if (cards) {
+        this.cards = cards;
+        this.manufacturers = [...new Set(cards.map((card) => card.manufacturer))];
+        this.models = [...new Set(cards.map((card) => card.name))];
+      }
     });
+    this.loadMoreData();
   }
 
   getCardsByProperty(
@@ -38,7 +47,7 @@ export class GraphicCardsComponent implements OnInit {
     prop: keyof IGraphicCardItem,
     val: string
   ): IGraphicCardItem[] {
-    return [...this.cards].filter((card: IGraphicCardItem) => {
+    return [...arr].filter((card: IGraphicCardItem) => {
       return card[prop] === val;
     });
   }
@@ -50,7 +59,7 @@ export class GraphicCardsComponent implements OnInit {
   ngOnInit(): void {
     const manufacturersCombo = this.form.get('manufacturersCombo');
     const modelsCombo = this.form.get('modelsCombo');
-    manufacturersCombo?.valueChanges.subscribe((data) => {
+    this.manufacturersSuscription = manufacturersCombo?.valueChanges.subscribe((data) => {
       const cards = this.getCardsByProperty(this.cards, 'manufacturer', manufacturersCombo?.value);
       const manufacturer: string | undefined = cards.length ? cards[0].manufacturer : '';
       const isSameManufacturer = cards.find(
@@ -63,7 +72,7 @@ export class GraphicCardsComponent implements OnInit {
         ? this.mapCardsToModelList(this.cards)
         : this.mapCardsToModelList(this.getCardsByProperty(this.cards, 'manufacturer', data));
     });
-    modelsCombo?.valueChanges.subscribe((data) => {
+    this.modelsSubscription = modelsCombo?.valueChanges.subscribe((data) => {
       if (!modelsCombo.value) {
         return;
       }
@@ -77,6 +86,12 @@ export class GraphicCardsComponent implements OnInit {
   }
 
   loadMoreData() {
-    this.service.loadData();
+    this.store.dispatch(GraphicCardsActions.loadGraphicCards());
+  }
+
+  onDestroy(): void {
+    this.cardsSubscription?.unsubscribe();
+    this.manufacturersSuscription?.unsubscribe();
+    this.modelsSubscription?.unsubscribe();
   }
 }

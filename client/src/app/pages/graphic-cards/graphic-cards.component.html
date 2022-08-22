@@ -23,8 +23,7 @@
   <div appInfiniteScroll (scrolled)="loadMoreData()">
     <app-graphic-cards-list-container
       [cards]="
-        cards$
-          | async
+        cards
           | filterArrayByPropertyValue: 'manufacturer':form.value.manufacturersCombo
           | filterArrayByPropertyValue: 'name':form.value.modelsCombo
       "

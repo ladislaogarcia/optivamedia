@@ -19,7 +19,7 @@ export class SpinnerInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     this.apiRequestQty++;
     this.spinnerSvc.show();
-    if (this.router.url.split('/').length > 2) {
+    if (this.router.url === '/' || this.router.url.split('/').length > 2) {
       return next.handle(request).pipe(
         finalize(() => {
           this.apiRequestQty--;

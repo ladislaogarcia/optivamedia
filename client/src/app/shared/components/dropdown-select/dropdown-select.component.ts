@@ -1,4 +1,11 @@
-import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  HostListener,
+  Input,
+  OnInit
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 export type IValue = string | number | null;
@@ -7,6 +14,7 @@ export type IValue = string | number | null;
   selector: 'app-dropdown-select',
   templateUrl: './dropdown-select.component.html',
   styleUrls: ['./dropdown-select.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

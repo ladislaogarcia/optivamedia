@@ -36,10 +36,10 @@ export class GraphicCardsService {
   >;
 
   constructor(private http: HttpClient) {
-    this.fake();
+    this.manyReals();
   }
 
-  fake() {
+  manyReals() {
     for (let i = 0; i <= 4; i++) {
       this.loadDataReal();
     }
@@ -90,8 +90,9 @@ export class GraphicCardsService {
               ...oldData,
               ...newData
             ].map((item, id) => {
-              item.id = id;
-              return { ...item };
+              const obj = { ...item };
+              obj.id = id;
+              return obj;
             });
             this.graphicCardsBehaviourSubject.next(allTogether);
           }

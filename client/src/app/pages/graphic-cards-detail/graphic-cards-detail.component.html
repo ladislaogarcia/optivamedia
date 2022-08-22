@@ -1,8 +1,4 @@
-<div
-  class="cardDetail"
-  *ngIf="card$ | async as card; else pagenotfound"
-  (click)="removeClassZoomed()"
->
+<div class="cardDetail" *ngIf="card$ | async as card">
   <section class="cardDetail__valoration">
     {{ card.id }}
   </section>
@@ -16,13 +12,7 @@
       /></a>
     </div>
     <section class="cardDetail__carousel__image">
-      <img
-        loading="lazy"
-        (click)="toggleClassZoomed($event)"
-        #bigpicture
-        [src]="card.original_pictures[0]"
-        [alt]="card.name"
-      />
+      <img loading="lazy" #bigpicture [src]="card.original_pictures[0]" [alt]="card.name" />
     </section>
   </section>
   <section class="cardDetail__content">
@@ -48,7 +38,3 @@
 
   <button class="cardDetail__backButton" [routerLink]="['/']">Back</button>
 </div>
-
-<ng-template #pagenotfound>
-  <app-page404></app-page404>
-</ng-template>

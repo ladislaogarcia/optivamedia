@@ -8,7 +8,8 @@
       "@shared/*": ["./src/app/shared/*"],
       "@pages/*": ["./src/app/pages/*"],
       "@environments/*": ["src/environments/*"],
-      "@mocks/*": ["src/app/mocks/*"]
+      "@mocks/*": ["src/app/mocks/*"],
+      "@store/*": ["src/app/store/*"]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
