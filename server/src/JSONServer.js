@@ -1,6 +1,7 @@
 const { createServer } = require('http');
 const { existsSync } = require('fs');
 const { join, resolve } = require('path');
+const colors = require('colors/safe');
 
 const defaultConfig = require('./server.defaults.json');
 const instanceConfigFileName = join(process.cwd(), './server.config.json');
@@ -55,6 +56,7 @@ class JSONServer {
   #writeMessage(message, color) {
     color = color || 'black';
     message = `${message}\r\n`;
+    console.log(colors[color](message));
   }
 
   /**
