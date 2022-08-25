@@ -1,10 +1,18 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { IGraphicCardItem } from '@core/models/igraphic-card-item.model';
 import { Store } from '@ngrx/store';
+import { DropdownSelectComponent } from '@shared/components/dropdown-select/dropdown-select.component';
 import { GraphicCardsActions } from '@store/actions/graphic-cards.actions';
 import { selectCards } from '@store/selectors/graphic-cards.selectors';
 import { Subscription } from 'rxjs';
+import { GraphicCardsListContainerComponent } from './components/graphic-cards-list-container/graphic-cards-list-container.component';
 Store;
 
 @Component({
@@ -24,22 +32,14 @@ export class GraphicCardsComponent implements OnInit {
   manufacturersSuscription!: Subscription | undefined;
   modelsSubscription!: Subscription | undefined;
 
-  constructor(private store: Store) {
+  constructor(private store: Store, private cdr: ChangeDetectorRef) {
     this.form = new FormGroup({
-      manufacturersCombo: new FormControl(''),
-      modelsCombo: new FormControl('')
+      manufacturersControl: new FormControl(''),
+      modelsControl: new FormControl('')
     });
     this.cards = [];
     this.manufacturers = [];
     this.models = [];
-    this.cardsSubscription = this.store.select(selectCards).subscribe((cards) => {
-      if (cards) {
-        this.cards = cards;
-        this.manufacturers = [...new Set(cards.map((card) => card.manufacturer))];
-        this.models = [...new Set(cards.map((card) => card.name))];
-      }
-    });
-    this.loadMoreData();
   }
 
   getCardsByProperty(
@@ -57,30 +57,43 @@ export class GraphicCardsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const manufacturersCombo = this.form.get('manufacturersCombo');
-    const modelsCombo = this.form.get('modelsCombo');
-    this.manufacturersSuscription = manufacturersCombo?.valueChanges.subscribe((data) => {
-      const cards = this.getCardsByProperty(this.cards, 'manufacturer', manufacturersCombo?.value);
+    this.cardsSubscription = this.store.select(selectCards).subscribe((cards) => {
+      if (cards) {
+        this.cards = cards;
+        this.manufacturers = [...new Set(cards.map((card) => card.manufacturer))];
+        this.models = [...new Set(cards.map((card) => card.name))];
+        this.cdr.detectChanges();
+      }
+    });
+    this.loadMoreData();
+    const manufacturersControl = this.form.get('manufacturersControl');
+    const modelsControl = this.form.get('modelsControl');
+    this.manufacturersSuscription = manufacturersControl?.valueChanges.subscribe((data) => {
+      const cards = this.getCardsByProperty(
+        this.cards,
+        'manufacturer',
+        manufacturersControl?.value
+      );
       const manufacturer: string | undefined = cards.length ? cards[0].manufacturer : '';
       const isSameManufacturer = cards.find(
-        (card: IGraphicCardItem) => card.name === modelsCombo?.value
+        (card: IGraphicCardItem) => card.name === modelsControl?.value
       );
       if (!isSameManufacturer) {
-        modelsCombo?.setValue('');
+        modelsControl?.setValue('');
       }
       this.models = !manufacturer
         ? this.mapCardsToModelList(this.cards)
         : this.mapCardsToModelList(this.getCardsByProperty(this.cards, 'manufacturer', data));
     });
-    this.modelsSubscription = modelsCombo?.valueChanges.subscribe((data) => {
-      if (!modelsCombo.value) {
+    this.modelsSubscription = modelsControl?.valueChanges.subscribe((data) => {
+      if (!modelsControl.value) {
         return;
       }
       const card: IGraphicCardItem | undefined = this.cards.find(
         (card: IGraphicCardItem) => card.name === data
       );
-      if (card?.manufacturer !== manufacturersCombo?.value) {
-        manufacturersCombo?.setValue(card?.manufacturer);
+      if (card?.manufacturer !== manufacturersControl?.value) {
+        manufacturersControl?.setValue(card?.manufacturer);
       }
     });
   }

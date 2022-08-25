@@ -3,18 +3,17 @@ import { MockServerResponse } from '@mocks/server-response.mock';
 import { IServerResponseModel } from '@core/models/iserver-response.model';
 
 import { GraphicCardsService } from '@core/services/graphic-cards.service';
-import { environment } from '@environments/environment';
-import { of } from 'rxjs';
+import { delay, of } from 'rxjs';
 import { IGraphicCardItem } from '@core/models/igraphic-card-item.model';
 
 describe('GraphicCardsService', () => {
-  let service: GraphicCardsService;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
+  let service: GraphicCardsService;
   let mockData: IServerResponseModel;
 
   beforeEach(async () => {
     httpClientSpy = jasmine.createSpyObj(HttpClient, ['get']);
-    service = new GraphicCardsService(httpClientSpy);
+    service = new GraphicCardsService(httpClientSpy, true);
     mockData = MockServerResponse();
   });
 

@@ -12,17 +12,7 @@
       "https://res-1.cloudinary.com/grover/image/upload/v1642009067/wvdlqbr4ziklmr0wmlvl.png"
     ],
     "manufacturer": "Nvidia",
-    "assembler": "Asus",
-    "specifications": {
-      "memory": {
-        "size": "24GB",
-        "type": "GDDR6X"
-      },
-      "boostClockSpeed": "1725 MHz",
-      "dimensions": "5.78 x 31.85 x 14.01 cm",
-      "weight": "1 kg"
-    },
-    "accessories": [],
+    "assembler": "Asus",    
     "price": {
       "current": 2795.16,
       "original": 2795.16
@@ -45,16 +35,6 @@
     ],
     "manufacturer": "AMD",
     "assembler": "MSI",
-    "specifications": {
-      "memory": {
-        "size": "16GB",
-        "type": "GDDR6"
-      },
-      "boostClockSpeed": "2340 MHz",
-      "dimensions": "5.5 x 32.4 x 14.1 cm",
-      "weight": "1.58 kg"
-    },
-    "accessories": [],
     "price": {
       "current": 1770.65,
       "original": 2036.24
@@ -76,16 +56,6 @@
     ],
     "manufacturer": "Nvidia",
     "assembler": "Zotac",
-    "specifications": {
-      "memory": {
-        "size": "24GB",
-        "type": "GDDR6"
-      },
-      "boostClockSpeed": "1710 MHz",
-      "dimensions": "31.78 x 12.07 x 5.8 cm",
-      "weight": "1 kg"
-    },
-    "accessories": [],
     "price": {
       "current": 899.89,
       "original": 899.89
@@ -108,16 +78,6 @@
     ],
     "manufacturer": "Gigabyte",
     "assembler": "AMD",
-    "specifications": {
-      "memory": {
-        "size": "16GB",
-        "type": "GDDR6"
-      },
-      "boostClockSpeed": "2285 MHz",
-      "dimensions": "5.8 x 28.6 x 11.8 cm",
-      "weight": "1.5 kg"
-    },
-    "accessories": [],
     "price": {
       "current": 2823.95,
       "original": 2823.95
@@ -139,16 +99,6 @@
     ],
     "manufacturer": "Gigabyte",
     "assembler": "Asus",
-    "specifications": {
-      "memory": {
-        "size": "16GB",
-        "type": "GDDR6"
-      },
-      "boostClockSpeed": "2105 MHz",
-      "dimensions": "14.02 x 32 x 5.78 cm",
-      "weight": "1 kg"
-    },
-    "accessories": [],
     "price": {
       "current": 1441.29,
       "original": 1441.29
@@ -170,22 +120,34 @@
     ],
     "manufacturer": "Nvidia",
     "assembler": "Asus",
-    "specifications": {
-      "memory": {
-        "size": "8GB",
-        "type": "GDDR6"
-      },
-      "boostClockSpeed": "1815 MHz",
-      "dimensions": "30 x 12.7 x 5.2 cm",
-      "weight": "1 kg"
-    },
-    "accessories": [],
     "price": {
       "current": 834.53,
       "original": 834.53
     },
     "valoration": {
       "avg": 9.9
+    }
+  },
+  {
+    "id": 7,
+    "name": "AMD Radeon Pro WX 9100 16GB GDDR5 HBM2",
+    "description": "AMD Radeon Pro proporciona el rendimiento, las caractersticas y la fiabilidad necesarias para abordar los flujos de trabajo profesionales que van desde el diseo y la simulacin del producto, hasta la postproduccin de video y los efectos visuales. Con una estricta calificación del producto, certificaciones de aplicaciones, optimizaciones de rendimiento y actualizaciones regulares de controladores empresariales, los profesionales pueden estar seguros de una experiencia visual de alta calidad y tranquilidad al trabajar en proyectos importantes.",
+    "currency": "EUR",
+    "original_image_url": "https://thumb.pccomponentes.com/w-530-530/articles/26/263327/amd-radeon-pro-wx-9100-16gb-gddr5-hbm2-caracteristicas.jpg",
+    "original_pictures": [
+      "https://thumb.pccomponentes.com/w-530-530/articles/26/263327/amd-radeon-pro-wx-9100-16gb-gddr5-hbm2-caracteristicas.jpg",
+      "https://thumb.pccomponentes.com/w-530-530/articles/26/263327/amd-radeon-pro-wx-9100-16gb-gddr5-hbm2-opiniones.jpg",
+      "https://thumb.pccomponentes.com/w-530-530/articles/26/263327/amd-radeon-pro-wx-9100-16gb-gddr5-hbm2-review.jpg",
+      "https://thumb.pccomponentes.com/w-530-530/articles/26/263327/amd-radeon-pro-wx-9100-16gb-gddr5-hbm2-foto.jpg"
+    ],
+    "manufacturer": "AMD",
+    "assembler": "AMD ",
+    "price": {
+      "current": 2706.38,
+      "original": 2706.38
+    },
+    "valoration": {
+      "avg": 8.7
     }
   }
 ]
