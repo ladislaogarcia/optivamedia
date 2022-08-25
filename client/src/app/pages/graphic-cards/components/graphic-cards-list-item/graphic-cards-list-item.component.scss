@@ -19,18 +19,13 @@ $minWidth: 200px;
 
 :host {
   width: 100%;
-  background: linear-gradient(
-    -45deg,
-    var(--color-grey-light, rgba(200, 200, 200, 0.7)) 0%,
-    var(--color-white, white) 60%
-  );
-  box-shadow: 0 4px 12px 3px rgba(0, 0, 0, 0.2) inset;
   display: flex;
   flex-wrap: wrap;
   flex: 1;
   position: relative;
   width: 100%;
   min-width: $minWidth;
+  background: transparent;
 
   @media (min-width: $rowMaxSize) {
     flex: 0;
@@ -44,6 +39,12 @@ $minWidth: 200px;
   align-items: center;
   width: 100%;
   border: 1px solid var(--color-primary, black);
+  box-shadow: 0 4px 12px 3px rgba(0, 0, 0, 0.2) inset;
+  background: linear-gradient(
+    -45deg,
+    var(--color-grey-light, rgba(200, 200, 200, 0.7)) 0%,
+    var(--color-white, white) 60%
+  );
   cursor: pointer;
   @include card_column;
 

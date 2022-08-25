@@ -5,7 +5,7 @@
       <label for="selectManufacturers">Manufacturers</label>
       <app-dropdown-select
         id="selectManufacturers"
-        formControlName="manufacturersCombo"
+        formControlName="manufacturersControl"
         [options]="manufacturers"
         [placeholder]="'All'"
       ></app-dropdown-select>
@@ -14,7 +14,7 @@
       <label for="selectModels">Model</label>
       <app-dropdown-select
         id="selectModels"
-        formControlName="modelsCombo"
+        formControlName="modelsControl"
         [options]="models"
         [placeholder]="'All'"
       ></app-dropdown-select>
@@ -22,10 +22,11 @@
   </div>
   <div appInfiniteScroll (scrolled)="loadMoreData()">
     <app-graphic-cards-list-container
+      id="cardListContainer"
       [cards]="
         cards
-          | filterArrayByPropertyValue: 'manufacturer':form.value.manufacturersCombo
-          | filterArrayByPropertyValue: 'name':form.value.modelsCombo
+          | filterArrayByPropertyValue: 'manufacturer':form.value.manufacturersControl
+          | filterArrayByPropertyValue: 'name':form.value.modelsControl
       "
     ></app-graphic-cards-list-container>
   </div>

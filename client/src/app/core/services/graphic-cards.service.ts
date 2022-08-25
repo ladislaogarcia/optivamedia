@@ -1,15 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import {
-  BehaviorSubject,
-  tap,
-  Observable,
-  withLatestFrom,
-  delay,
-  catchError,
-  of,
-  pluck
-} from 'rxjs';
+import { Inject, Injectable, Optional } from '@angular/core';
+import { BehaviorSubject, tap, Observable, withLatestFrom, catchError, of, pluck } from 'rxjs';
 import { IGraphicCardItem } from '@core/models/igraphic-card-item.model';
 
 import { environment } from '@environments/environment';
@@ -35,8 +26,10 @@ export class GraphicCardsService {
     IGraphicCardItem[]
   >;
 
-  constructor(private http: HttpClient) {
-    this.manyReals();
+  constructor(private http: HttpClient, @Optional() @Inject('isText') private isTest?: boolean) {
+    if (!this.isTest) {
+      this.manyReals();
+    }
   }
 
   manyReals() {
@@ -61,8 +54,8 @@ export class GraphicCardsService {
             oldData
           ]) => {
             const allTogether = [
-              ...oldData,
-              ...newData
+              oldData,
+              newData
             ].map((item, id) => {
               item.id = id;
               return { ...item };

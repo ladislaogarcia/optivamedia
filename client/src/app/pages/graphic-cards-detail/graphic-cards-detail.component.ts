@@ -21,15 +21,20 @@ export class GraphicCardsDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private store: Store) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params['id'];
     this.store.dispatch(GraphicCardsActions.loadGraphicCards());
     this.card$ = this.store.select(selectCards).pipe(
-      map((items) => items.filter((item) => item.id === parseInt(id))[0]),
-      tap((item) => {
-        if (!item) {
-          this.router.navigate(['/page404']);
-        }
-      })
+      map(
+        (items) =>
+          items.filter((item, id) => {
+            return item.id === Number(this.id);
+          })[0],
+        tap((item: any) => {
+          if (!item || item === undefined || item === null) {
+            this.router.navigate(['/page404']);
+          }
+        })
+      )
     );
     this.store.dispatch(GraphicCardsActions.loadGraphicCards());
   }

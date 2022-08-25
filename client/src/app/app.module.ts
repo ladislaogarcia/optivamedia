@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
 import { SharedModule } from '@shared/shared.module';
 import { StoreModule } from '@ngrx/store';
-import { GraphicCardsReducers } from '@store/reducers/graphic-cards.reducers';
+import { GraphicCardsReducer } from '@store/reducers/graphic-cards.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
@@ -17,7 +17,7 @@ import { GraphicCardsEffects } from '@store/effects/graphic-cards.effects';
     AppRoutingModule,
     CoreModule,
     SharedModule,
-    StoreModule.forRoot({ root: GraphicCardsReducers.loadItemsReducer }),
+    StoreModule.forRoot({ root: GraphicCardsReducer }),
     EffectsModule.forRoot([GraphicCardsEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],

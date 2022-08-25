@@ -3,13 +3,6 @@ export interface Memory {
   type: string;
 }
 
-export interface Specifications {
-  memory: Memory;
-  boostClockSpeed: string;
-  dimensions: string;
-  weight: string;
-}
-
 export interface Price {
   current: number;
   original: number;
@@ -28,8 +21,6 @@ export interface IGraphicCardItem {
   original_pictures: string[];
   manufacturer: string;
   assembler: string;
-  specifications: Specifications;
-  accessories: any[];
   price: Price;
   valoration: Valoration;
 }
