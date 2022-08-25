@@ -1,0 +1,11 @@
+services:
+  server:
+    build: server
+    container_name: appserver_0.1.0
+    ports: 
+    - "3003:3003"
+  client:
+    build: client
+    container_name: appclient_0.1.0
+    ports: 
+    - "4000:4000"
