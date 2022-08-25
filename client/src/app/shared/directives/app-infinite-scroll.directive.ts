@@ -1,12 +1,4 @@
-import {
-  Directive,
-  ElementRef,
-  OnInit,
-  Output,
-  Renderer2,
-  EventEmitter,
-  HostListener
-} from '@angular/core';
+import { Directive, ElementRef, OnInit, Output, Renderer2, EventEmitter } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { ApplicationRef } from '@angular/core';
 
@@ -60,7 +52,7 @@ export class AppInfiniteScrollDirective implements OnInit {
 
   private checkScrollBottom(elem: EventTarget): boolean {
     const { offsetHeight, scrollTop, scrollHeight }: any = elem;
-    const isScrolledBottom = offsetHeight + scrollTop >= scrollHeight - 20;
+    const isScrolledBottom = offsetHeight + scrollTop >= scrollHeight - 100;
     isScrolledBottom && this.scrolled.emit();
     return isScrolledBottom;
   }
