@@ -10,7 +10,6 @@ describe('GraphicCardsDetailComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [GraphicCardsDetailComponent]
     }).compileComponents();
-
     fixture = TestBed.createComponent(GraphicCardsDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
