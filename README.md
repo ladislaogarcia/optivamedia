@@ -14,6 +14,7 @@ It is divided into two pieces: server and client.
 3. [How to use it](#how-to-use-it)
 4. [Dockerize it](#docker)
 <br>
+
 ## Server
 <span id="server"></div>
 This is an application developed only with NodeJS using the 'http' module to create a simple JSON server. Simple to manage, too.
@@ -64,9 +65,15 @@ Any question or doubt, do not hesitate to reach me.
 
 We have to more npm scripts to know:
 <br/><br/>
-**npm run server:test**: Run the server unit test
+```cmd
+npm run server:test
+```
+Run the server unit test
 <br>
-**npm run client:test**: Run the client unit test
+```cmd
+npm run client:test
+```
+Run the client unit test
 <br>
 
 There is few more ones in 'package.json' file.
