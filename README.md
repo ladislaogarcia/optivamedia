@@ -14,7 +14,6 @@ It is divided into two pieces: server and client.
 3. [How to use it](#how-to-use-it)
 4. [Dockerize it](#docker)
 <br>
-<br>
 
 ## Server
 <span id="server"></div>
@@ -22,8 +21,8 @@ This is an application developed only with NodeJS using the 'http' module to cre
 
 - NodeJS **'http'** module: https://nodejs.org/api/http.html
 <br>
-<br>
-More detailed information can be found [here: /server/README.md](/server/README.md)
+
+More detailed information can be found here: [Server Docs](/server/README.md)
 
 ## Client
 
@@ -66,9 +65,15 @@ Any question or doubt, do not hesitate to reach me.
 
 We have to more npm scripts to know:
 <br/><br/>
-**npm run server:test**: Run the server unit test
+```cmd
+npm run server:test
+```
+Run the server unit test
 <br>
-**npm run client:test**: Run the client unit test
+```cmd
+npm run client:test
+```
+Run the client unit test
 <br>
 
 There is few more ones in 'package.json' file.
@@ -101,14 +106,28 @@ We have to do a task in both directories ('**server**' and '**client**'). Almost
 1. Go into the directory '**server**' over a terminal.
 2. Type this:
 ```bash
+docker build -t <image_name:version>
+```
+Version is optional. With this command we will create the image based in the Dockerfile placed in that folder
+
+```bash
 docker run -p 3003:3003 --name app1 appserver:1.0.
 ```
+Typing it, we will create a container based in our image.
+
 **Port 3003** is the default port. If it is changed, this has to be changed too. Mapping the server port with the same port in the container.
 3. Go into the directory '**server**' over a terminal.
 2. Type this:
 ```bash
+docker build -t <image_name:version>
+```
+Version is optional. With this command we will create the image based in the Dockerfile placed in that folder
+
+```bash
 docker run -p 4000:4000 --name <container_name> <image_name>
 ```
+Typing it, we will create a container based in our image.
+
 **Port 4000** is the default port for Angular Universal SSR Applications. If it is changed, this has to be changed too. Mapping the server port with the same port in the container.
 
 Afterwards, there is only needed to open a web browser and navigate to:
