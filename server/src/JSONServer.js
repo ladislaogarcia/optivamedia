@@ -76,6 +76,7 @@ class JSONServer {
     });
 
     this.instance.on('request', (req, res) => {
+      this.urlRequest = req.headers.host;
       const endpointRequested = this.#resolvePath(req.url).pathname;
       let returnObject;
 
@@ -153,7 +154,8 @@ class JSONServer {
   }
 
   #resolvePath(pathname) {
-    return new URL(resolve(pathname));
+    const protocol = this.config.protocol || ( parseInt(this.config.port) !== 443) ? 'http' : 'https';
+    return new URL(resolve(pathname), `${protocol}://${this.urlRequest}`);
   }
 
   /**
